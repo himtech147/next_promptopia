@@ -50,12 +50,12 @@
       hsla(215, 98%, 61%, 1) 0px,
       transparent 0%
     ),
-    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
-    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
-    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
-    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
-    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
-    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+    radial-gradient(at 97% 21%, rgb(222, 98, 26) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, rgb(247, 247, 247) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, rgb(228, 255, 20) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, rgb(214, 90, 19) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, rgb(255, 53, 13) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, rgb(211, 0, 60) 0px, transparent 50%);
   position: absolute;
   content: "";
   width: 100%;
@@ -81,7 +81,13 @@
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
 }
 
-.outline_btn {
+.green_gradient_btn {
+  @apply rounded-full border border-lime-300 bg-black from-green-400 to-green-100 py-1.5 px-5 text-white transition-all  hover:bg-gradient-to-r hover:from-green-600 hover:to-lime-600 hover:border-lime-800 hover:text-transparent hover:bg-clip-text text-center text-base font-inter flex items-center justify-center;
+}
+.orange_gradient_btn {
+  @apply rounded-full border border-orange-300 bg-black from-orange-700 to-green-100 py-1.5 px-5 text-white transition-all  hover:bg-gradient-to-r hover:from-orange-600 hover:to-orange-900 hover:border-red-800 hover:text-transparent hover:bg-clip-text hover:font-bold text-center text-base font-inter flex items-center justify-center;
+}
+pg .outline_btn {
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
 }
 
@@ -141,7 +147,7 @@
 }
 
 .dropdown {
-  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-xl bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
 }
 
 .dropdown_link {
