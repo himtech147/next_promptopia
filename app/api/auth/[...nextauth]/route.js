@@ -1,3 +1,4 @@
+import { connectToDatabase } from "@utils/database";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
@@ -22,7 +23,17 @@ const handler = NextAuth({
       // is a lambda funtion that opens up only when it gets called
       // and everytime it gets called it needs to spin up the
       // server and make connection to database
-    } catch (error) {}
+      await connectToDatabase();
+
+      // check if user exists
+
+      // if not, create a new user
+
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
   },
 });
 
