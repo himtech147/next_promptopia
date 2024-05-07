@@ -14,6 +14,10 @@ module.exports = {
       colors: {
         "primary-orange": "#FF5722",
       },
+      animation: {
+        wiggle: "wiggle 0.1s ease-in-out infinite",
+        "spin-slow": "spin 3s linear infinite",
+      },
     },
   },
   plugins: [],

@@ -81,6 +81,10 @@
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
 }
 
+.black_gray_btn {
+  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all  hover:border-x text-center text-sm font-inter flex items-center justify-center;
+}
+
 .green_gradient_btn {
   @apply rounded-full border border-lime-300 bg-black from-green-400 to-green-100 py-1.5 px-5 text-white transition-all  hover:bg-gradient-to-r hover:from-green-600 hover:to-lime-600 hover:border-lime-800 hover:text-transparent hover:bg-clip-text text-center text-base font-inter flex items-center justify-center;
 }
@@ -97,6 +101,10 @@ pg .outline_btn {
 
 .orange_gradient {
   @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+}
+
+.orange_gradient_logo {
+  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent max-sm:hidden font-satoshi font-semibold text-lg tracking-wide;
 }
 
 .green_gradient {
