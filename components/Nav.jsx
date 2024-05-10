@@ -109,6 +109,7 @@ const Nav = () => {
                     src="/assets/images/login.svg"
                     width={30}
                     height={30}
+                    alt="Sign in icon"
                     className="rounded-full mx-1 fill-cyan-200 text-red-400"
                   ></Image>
                 </button>
@@ -185,6 +186,7 @@ const Nav = () => {
                     src="/assets/images/login.svg"
                     width={30}
                     height={30}
+                    alt="Sign in icon"
                     className="rounded-full mx-1 fill-cyan-200 text-red-400"
                   ></Image>
                 </button>

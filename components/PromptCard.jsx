@@ -5,7 +5,10 @@ import { useState } from "react";
 
 const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const [copied, setCopied] = useState("");
-  const visible = copied === post.prompt;
+  const { data: session } = useSession();
+  const router = useRouter();
+  const pathname = usePathname();
+
   const handleCopy = () => {
     setCopied(post.prompt);
     //copy to clipboard
@@ -14,13 +17,14 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
     });
     setTimeout(() => setCopied(""), 3000);
   };
+
   return (
     <div className="prompt_card">
       <div className="flex justify-between items-start gap-5">
         <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
           <Image
             src={post.creator.image}
-            alt="user iamge"
+            alt="user image"
             width={40}
             height={40}
             className="rounded-full object-contain"
@@ -44,6 +48,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
               src={"/assets/icons/tick.svg"}
               width={14}
               height={14}
+              alt="tick_icon"
               // style='transition: "all 300ms ease-in-out"'
               className={`absolute ${
                 copied == post.prompt ? "opacity-100" : "opacity-0"
@@ -53,6 +58,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
               src={"/assets/icons/copy.svg"}
               width={14}
               height={14}
+              alt="copy_icon"
               className={`${
                 copied == post.prompt ? "opacity-0" : "opacity-100"
               } transition-opacity ease-in-out delay-150 duration-3000`}
@@ -69,6 +75,17 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
       >
         {post.tag}
       </p>
+
+      {session?.user.id === post.creator._id && pathname === "/profile" && (
+        <div className="mt-5 flex-center gap-5">
+          <p className="font-inter text-sm green_gradient cursor-pointer">
+            Edit
+          </p>
+          <p className="font-inter text-sm orange_gradient cursor-pointer">
+            Delete
+          </p>
+        </div>
+      )}
     </div>
   );
 };

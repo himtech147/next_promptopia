@@ -1,5 +1,3 @@
-"use server";
-
 import User from "@models/user";
 import { connectToDB } from "@utils/database";
 import NextAuth from "next-auth";
