@@ -1,6 +1,7 @@
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
 import "@styles/globals.css";
+import NextTopLoader from "nextjs-toploader";
 
 export const metadata = {
   title: "Promptogram",
@@ -11,6 +12,8 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
+        <NextTopLoader color="green" showSpinner={false} />
+
         {/* next auth uses the front end layout and as well as the backend next api */}
         {/* ie we setup this in /api/auth/[...nextauth] */}
         <Provider>

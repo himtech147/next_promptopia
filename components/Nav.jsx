@@ -37,11 +37,11 @@ const Nav = () => {
         <div className="rounded-full w-32 h-32">
           <Image
             src="/assets/images/nav_logo.jpeg"
-            width={100}
-            height={100}
+            width={75}
+            height={75}
             priority={true}
             alt="logo"
-            className="overflow-hidden rounded-full border-orange-500 border-x-4 border-spacing-y-4 border-spacing-x-4 p-[2px]"
+            className="overflow-hidden rounded-full border-orange-500 my-8 border-x-4 border-spacing-y-4 border-spacing-x-4 p-[2px]"
           ></Image>
           <p className="orange_gradient_logo">PromptoGram</p>
         </div>
@@ -103,7 +103,7 @@ const Nav = () => {
                   }}
                   className="black_gray_btn"
                 >
-                  <span class="animate-ping absolute inline-flex h-8 w-16 rounded-full bg-gray-100 opacity-75"></span>
+                  <span className="animate-ping absolute inline-flex h-8 w-16 rounded-full bg-gray-100 opacity-75"></span>
                   Sign In
                   <Image
                     src="/assets/images/login.svg"
@@ -123,9 +123,9 @@ const Nav = () => {
           <div className="flex">
             <Image
               src={session?.user.image}
-              width={37}
-              height={37}
-              className="rounded-full"
+              width={77}
+              height={77}
+              className="rounded-full cursor-pointer border-x-4 border-primary-orange p-[1px]"
               alt="profile"
               onClick={() => {
                 setToggleDropdown((prev) => !prev);
@@ -134,6 +134,13 @@ const Nav = () => {
             ></Image>
             {toggleDropdown && (
               <div className="dropdown m-4">
+                <Link
+                  href="/"
+                  className="dropdown_link"
+                  onClick={() => setToggleDropdown(false)}
+                >
+                  Home
+                </Link>
                 <Link
                   href="/profile"
                   className="dropdown_link"
@@ -163,19 +170,26 @@ const Nav = () => {
           </div>
         ) : (
           <>
-            {providers &&
-              Object.values(providers).map((provider) => (
+            {providers && (
+              <div className="group">
                 <button
                   type="button"
-                  key={provider.id}
                   onClick={() => {
-                    signIn(provider.Id);
+                    signIn();
                   }}
-                  className="black_btn"
+                  className="black_gray_btn"
                 >
+                  <span className="animate-ping absolute inline-flex h-6 w-16 rounded-full bg-gray-100 opacity-75"></span>
                   Sign In
+                  <Image
+                    src="/assets/images/login.svg"
+                    width={30}
+                    height={30}
+                    className="rounded-full mx-1 fill-cyan-200 text-red-400"
+                  ></Image>
                 </button>
-              ))}
+              </div>
+            )}
           </>
         )}
       </div>

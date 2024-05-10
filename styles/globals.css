@@ -131,6 +131,10 @@ pg .outline_btn {
   @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
 }
 
+.glassmorphism_opaque {
+  @apply rounded-xl border-x-2 border-y-2 border-gray-200 focus:border-gray-400 bg-white/10 focus:shadow-none focus:bg-white shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-2 text-gray-600 font-satoshi font-extrabold text-base;
+}
+
 .prompt_layout {
   @apply space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3;
 }

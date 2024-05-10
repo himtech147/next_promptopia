@@ -4,6 +4,7 @@ import Form from "@components/Form";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import NextTopLoader from "nextjs-toploader";
 
 const CreatePrompt = () => {
   const [submitting, setSubmitting] = useState(false);
