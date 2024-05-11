@@ -4,7 +4,6 @@ import Form from "@components/Form";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import NextTopLoader from "nextjs-toploader";
 
 const CreatePrompt = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -18,7 +17,7 @@ const CreatePrompt = () => {
   const createPrompt = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-    console.log("ss", session);
+
     try {
       const res = await fetch("/api/prompt/new", {
         method: "POST",
