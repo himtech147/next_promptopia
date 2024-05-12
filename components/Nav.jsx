@@ -41,9 +41,8 @@ const Nav = () => {
             height={75}
             priority={true}
             alt="logo"
-            className="overflow-hidden rounded-full border-orange-500 my-8 border-x-4 border-spacing-y-4 border-spacing-x-4 p-[2px]"
+            className="overflow-hidden rounded-full border-orange-500 my-2 border-x-4 border-spacing-y-4 border-spacing-x-4 p-[2px] mx-6"
           ></Image>
-          <p className="orange_gradient_logo">PromptoGram</p>
         </div>
       </Link>
 
@@ -124,8 +123,8 @@ const Nav = () => {
           <div className="flex">
             <Image
               src={session?.user.image}
-              width={77}
-              height={77}
+              width={45}
+              height={45}
               className="rounded-full cursor-pointer border-x-4 border-primary-orange p-[1px]"
               alt="profile"
               onClick={() => {
