@@ -2,6 +2,7 @@ import Nav from "@components/Nav";
 import Provider from "@components/Provider";
 import "@styles/globals.css";
 import NextTopLoader from "nextjs-toploader";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Promptogram",
@@ -21,7 +22,9 @@ const RootLayout = ({ children }) => {
             <div className="gradient"></div>
           </div>
           <main className="app">
-            <Nav />
+            <Suspense>
+              <Nav />
+            </Suspense>
             {children}
           </main>
         </Provider>

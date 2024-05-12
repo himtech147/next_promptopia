@@ -13,6 +13,7 @@
 /.next/
 /out/
 .env
+.env_copy
 # production
 /build
 

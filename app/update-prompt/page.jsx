@@ -57,14 +57,20 @@ const UpdatePrompt = () => {
   }, [promptId]);
 
   return (
+    <Form
+      type="Update"
+      post={post}
+      setPost={setPost}
+      submitting={submitting}
+      handleSubmit={updatePrompt}
+    />
+  );
+};
+
+const UpdatePromptWithSuspense = () => {
+  return (
     <Suspense>
-      <Form
-        type="Update"
-        post={post}
-        setPost={setPost}
-        submitting={submitting}
-        handleSubmit={updatePrompt}
-      />
+      <UpdatePrompt />
     </Suspense>
   );
 };
